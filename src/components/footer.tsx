@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 const footer = ()=>{
     return(
         <div className="footer">
@@ -41,9 +42,9 @@ const footer = ()=>{
                 </div>
                 <div className="item">
                     <ul>
-                        <li><i class="fa fa-linkedin-square" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+                        <li><i className="fa fa-linkedin-square" aria-hidden="true"></i></li>
+                        <li><i className="fa fa-instagram" aria-hidden="true"></i></li>
+                        <li><i className="fa fa-facebook-square" aria-hidden="true"></i></li>
                     </ul>
                 </div>
             </div>

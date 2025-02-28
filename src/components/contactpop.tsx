@@ -18,7 +18,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                 <div className="social-icons">
                     <i className="fab fa-linkedin"></i>
                     <i className="fab fa-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
+                    <i className="fa-brands fa-instagram"></i>
                 </div>
                 </div>
                 
