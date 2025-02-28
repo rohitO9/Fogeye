@@ -1,0 +1,108 @@
+.footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    background-color:rgba(25, 0, 66, 1);
+    .line{
+        background-color: aliceblue;
+        width: 100%;
+        height:0.5px;
+    }
+}
+.footercontainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px;
+    padding: 20px;
+    @media (max-width:720px) {
+        flex-direction: column;
+        margin: 0;
+        align-items: flex-start;
+        gap: 50px;
+    }
+
+    /* background-color: antiquewhite; */
+    .footerlogo{
+        display: flex;
+        flex-direction: column;
+        .flag{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content:left;
+            padding-top: 20px;
+            .usa{
+                padding: 0px 20px;
+
+            }
+        }
+    }
+    .menu {
+        @media (max-width: 740px) {
+                flex-direction: column;
+                display: flex;
+                background: unset;
+                position: unset;
+                width: auto;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+            @media (max-width: 740px) {
+                flex-direction: row;
+                display: flex;
+                font-size: 14px;
+               
+        }
+            li {
+                cursor: pointer;
+                transition: color 0.3s;
+                color: rgb(245, 241, 241);
+                a{
+                    color: rgb(245, 241, 241);
+                }
+                @media (max-width:740px) {
+                    padding: unset;
+                    text-align: center;
+                }
+                &:hover {
+                    color: darkblue;
+                }
+            }
+        }
+    }
+}
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 50px;
+    padding: 20px;
+    /* background-color: rgb(218, 218, 71); */
+    @media (max-width:550px) {
+        flex-direction: column;
+    }
+    .item ul{
+        list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+            li {
+                cursor: pointer;
+                transition: color 0.3s;
+                color: rgb(247, 241, 241);
+                &:hover {
+                    color: darkblue;
+                }
+            }
+    }
+}

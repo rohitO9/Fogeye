@@ -1,0 +1,386 @@
+.about {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    @media (max-width:860px) {
+        background: #C1CEE55C;
+    }
+
+    .aboutcontainer {
+        position: relative;
+        left: 0;
+        top: 0;
+        right: 0;
+        justify-content: center;
+        background: linear-gradient(90deg, rgb(241 233 233) 31%, rgba(255, 201, 243, 1) 69%);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+        display: flex;
+        height: 847px;
+        z-index: 10;
+
+        @media (max-width:760px) {
+            clip-path: unset;
+            height: auto;
+        }
+
+        .about_hero {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            padding: 0px 50px;
+
+            .hero_img {
+
+                @media (max-width:760px) {
+
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+
+            @media(max-width:760px) {
+                flex-direction: column;
+                padding: 0px 20px;
+                margin-top: 100px;
+                gap: unset;
+            }
+
+            .hero_text {
+                max-width: 600px;
+            }
+        }
+    }
+
+    .aboutHeroBotom {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-top: -18rem;
+        z-index: 5;
+    }
+
+    .heroCards {
+        top: -100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 50;
+        padding: 0px 20px;
+
+        .aboutcards {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+
+            @media(max-width:760px) {
+                flex-direction: column;
+            }
+
+            .herocard {
+                display: flex;
+                border: 1px solid rgb(229, 226, 226);
+                background-color: rgb(255, 255, 255);
+                flex-direction: column;
+                justify-content: center;
+                max-width: 368px;
+                align-items: center;
+                padding: 40px 20px;
+
+
+                h1 {
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+
+    .why-choose-us {
+        text-align: center;
+        font-family: Arial, sans-serif;
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            width: 100%;
+            height: 359px;
+            align-items: center;
+            justify-content: center;
+            background-image: url("../assets/aboutbackground.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            .featurescards {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 30px;
+                width: 80%;
+                height: 200px;
+                background: #f3f3f3;
+                align-items: center;
+
+                @media (max-width:760px) {
+                    flex-direction: column;
+                    height: auto;
+                    padding: 20px;
+                }
+
+                .feature {
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    position: relative;
+                    flex: 1;
+                    color: #333;
+
+                    &:not(:first-child)::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 1%;
+                        bottom: 1%;
+                        width: 1px;
+                        background: #ccc;
+
+                        @media (max-width: 760px) {
+                            content: "";
+                            position: absolute;
+                            left: 1%;
+                            top: 0;
+                            right: 1%;
+                            height: 1px;
+                            background: #ccc;
+                            width: unset;
+                        }
+                    }
+                }
+            }
+        }
+
+        .new_eclips {
+            z-index: -9999;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+
+        .guiding-philosophy {
+            padding: 0px 10rem;
+            border-radius: 8px;
+            text-align: left;
+            /* max-width: 1024px; */
+            margin: 0 auto;
+            left: 50%;
+            position: relative;
+            transform: translate(-50%);
+            height: auto;
+
+            @media (max-width:860px) {
+                padding: 0px 50px;
+                margin-bottom: 140px;
+            }
+            @media (max-width:460px) {
+                padding: 0px 50px;
+                margin-bottom: 190px;
+            }
+
+            .para {
+                padding: 50px;
+                z-index: 10;
+                border: 0.5px solid rgb(95, 92, 92);
+                border-radius: 20px;
+                @media (max-width:550px) {
+                    padding: 20px;
+                }
+
+                h4 {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin-bottom: 8px;
+
+                    strong {
+                        color: #222;
+                    }
+                }
+            }
+
+            .image-container {
+                z-index: 5;
+                position: absolute;
+                right: 57px;
+                bottom: -51px;
+                width: 360px;
+                height: 360px;
+                border-radius: 50%;
+                overflow: hidden;
+
+                @media(max-width:1200px) {
+                    bottom: -129px;
+                    right: -20px;
+                }
+
+                @media(max-width:860px) {
+                    bottom: -10rem;
+                    right: -20px;
+                }
+                @media(max-width:660px) {
+                    bottom: -15rem;
+                    right: -20px;
+                }
+                @media(max-width:660px) {
+                    bottom: -15rem;
+                    right: -20px;
+                }
+                @media(max-width:460px) {
+                    width: 260px;
+                    height: 260px;
+                    bottom: -12rem;
+                    right: -20px;
+                }
+
+                img {
+                    width: 90%;
+                    height: 90%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+    }
+
+    .contact-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10% 0px;
+        background: #f7f7f78c;
+        @media (max-width:860PX) {
+            background: #c1cee500; 
+            .input-row{
+                input{
+                    width: 90%;
+                }
+            }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+
+            @media (max-width: 992px) {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-form {
+                flex: 1;
+                max-width: 450px;
+                @media (max-width:860px) {
+                    padding: 0px 20px;
+                }
+
+                h2 {
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                    color: #1a1a1a;
+                }
+
+                .email-info {
+                    font-size: 16px;
+                    color: #5f5f5f;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-bottom: 20px;
+
+                    span {
+                        font-size: 18px;
+                    }
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    gap: 15px;
+
+                    .input-row {
+                        display: flex;
+                        gap: 10px;
+
+                        input {
+                            flex: 1;
+                            padding: 12px;
+                            border: 1px solid #ddd;
+                            border-radius: 5px;
+                            font-size: 16px;
+                        }
+                    }
+
+                    textarea {
+                        padding: 12px;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        font-size: 16px;
+                        resize: none;
+                        height: 100px;
+                    }
+
+                    button {
+                        width: 100%;
+                        padding: 12px;
+                        background: #2E007A;
+                        color: white;
+                        border: none;
+                        font-size: 16px;
+                        font-weight: 600;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: background 0.3s ease;
+
+                        &:hover {
+                            background: #2E007A;
+                        }
+                    }
+                }
+            }
+
+            .contact-illustration {
+                display: flex;
+                @media (max-width:860px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+}

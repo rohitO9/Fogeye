@@ -1,0 +1,237 @@
+.product {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: linear-gradient(90deg, rgba(248, 248, 248, 1) 31%, rgba(215, 219, 232, 1) 69%);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .productcontainer {
+        position: relative;
+        left: 0;
+        top: 0;
+        right: 0;
+        justify-content: center;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        z-index: 10;
+
+        .producthero {
+            background-image: url("../assets/product.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 150px;
+            width: 85%;
+            height: 150px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            text-align: center;
+            @media (max-width:860px) {
+                width: 95%;
+                height: 200px;
+            }
+
+            h1 {
+                color: azure;
+                font-size: 40px;
+                font-weight: 600;
+                @media (max-width:860PX) {
+                  
+                font-size: 25px;
+                font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .productcards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 800px;
+        gap: 50px;
+        margin-top: 10%;
+
+        .allproduct {
+            display: flex;
+            width: 80%;
+            height: auto;
+            padding: 20px 50px 20px 20px;
+            perspective: 1000px;
+            background: #D0D0D0;
+            border-radius: 10px;
+            justify-content: space-around;
+            button{
+                background: #011846;
+                border-radius: 80px;
+            }
+            @media (max-width:1100px) {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+            .content{
+                max-width: 500px;
+                h1{
+                    color: #011846;
+                    @media (max-width:760px) {
+                        font-size: 30px;
+                        color: #011846;
+
+                    }
+                }
+                h3{
+                    color: #717171;
+                    @media (max-width:860px) {
+                        font-size: 20px;
+                    }
+                }
+                p{
+                    @media (max-width:760px) {
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+                }
+                @media(max-width:1100px) {
+                    max-width: 700px;
+                }
+            }
+            .productimg{
+                display: flex;
+                align-items: center;
+            }
+
+            .tag {
+                position: absolute;
+                right: -37px;
+                top: 50%;
+                transform: translateY(-50%) rotate(90deg);
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+                @media (max-width:1100px) {
+                    top: 27%;
+                    
+                }
+            }
+        }
+    }
+
+    .contact-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10% 0px;
+        background: #f7f7f78c;
+        @media (max-width:860PX) {
+            background: #c1cee500; 
+            .input-row{
+                input{
+                    width: 90%;
+                }
+            }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+
+            @media (max-width: 992px) {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-form {
+                flex: 1;
+                max-width: 450px;
+                @media (max-width:860px) {
+                    padding: 0px 20px;
+                }
+
+                h2 {
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                    color: #1a1a1a;
+                }
+
+                .email-info {
+                    font-size: 16px;
+                    color: #5f5f5f;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-bottom: 20px;
+
+                    span {
+                        font-size: 18px;
+                    }
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    gap: 15px;
+
+                    .input-row {
+                        display: flex;
+                        gap: 10px;
+
+                        input {
+                            flex: 1;
+                            padding: 12px;
+                            border: 1px solid #ddd;
+                            border-radius: 5px;
+                            font-size: 16px;
+                        }
+                    }
+
+                    textarea {
+                        padding: 12px;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        font-size: 16px;
+                        resize: none;
+                        height: 100px;
+                    }
+
+                    button {
+                        width: 100%;
+                        padding: 12px;
+                        background: #2E007A;
+                        color: white;
+                        border: none;
+                        font-size: 16px;
+                        font-weight: 600;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: background 0.3s ease;
+
+                        &:hover {
+                            background: #2E007A;
+                        }
+                    }
+                }
+            }
+
+            .contact-illustration {
+                display: flex;
+                @media (max-width:860px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
