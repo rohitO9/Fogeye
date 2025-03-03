@@ -42,7 +42,7 @@ const product = ()=>{
                         products.map((product ,index)=>(
                             <div key={index} className="allproduct">
                                 <div style={{width:"100%"}} className="productbutton">
-                               <button href="#" className="read-more">Read More →</button>
+                               <button className="read-more">Read More →</button>
                                </div>
                                 <div className="content">
                                 <h1>{product.Heading}</h1>
