@@ -13,6 +13,10 @@ import image250 from "../assets/Group250.png";
 import card from "../assets/Rectangle5836.png";
 import {IoMailOutline, IoMailUnreadOutline} from 'react-icons/io5'
 import ContactUs from "../components/ContactUs";
+import { Link } from "react-router-dom";
+import ContactPopup from "../components/contactpop";  // Import Contact Popup
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,6 +81,17 @@ const blogs = [
 
 const Home = () => {
     const [cards, setCards] = useState(initialCards);
+    const [popupOpen, setPopupOpen] = useState(false); // State for Popup
+    const [xOffset, setXOffset] = useState(window.innerWidth < 500 ? -250 : 350);
+
+    // Handle screen resizing
+    useEffect(() => {
+        const handleResize = () => {
+            setXOffset(window.innerWidth < 500 ? -250 : -350);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     const handleCardClick = () => {
         setCards((prevCards) => {
@@ -96,8 +111,11 @@ const Home = () => {
                     </p>
 
                     <div className="herobutton">
-                        <button className="explore">Explore Products</button>
-                        <button className="get">
+                        
+                        <button className="explore"><Link to="/product">Explore Products </Link></button>
+                        
+                        
+                        <button className="get" onClick={() => setPopupOpen(true)}>
                          <IoMailUnreadOutline className='icon'  />    Get in Touch
                         </button>
                     </div>
@@ -111,14 +129,14 @@ const Home = () => {
             <div className="top_mid">
                 <motion.div className="slider-wrapper">
                     <AnimatePresence>
-                        {cards.map((card, index) => (
+                    {cards.map((card, index) => (
                             <motion.div
                                 key={card.id}
                                 className={`TM_1 ${index === 1 ? "center-card" : ""}`}
                                 onClick={handleCardClick}
                                 initial={{ opacity: 0, scale: 0.9, x: 100 }} // 🔹 Start with fade-in effect
                                 animate={{
-                                    x: index === 0 ? "-350px" : index === 1 ? "0px" : "350px", // 🔹 Reduced gap
+                                    x: index === 0 ? -xOffset : index === 1 ? 0 : xOffset, // Left = -xOffset, Right = +xOffset
                                     rotateY: index === 0 ? -35 : index === 2 ? 35 : 0, // 🔹 Smoother rotation
                                     scale: index === 1 ? 1.2 : 1, // 🔹 Center card enlarges
                                     opacity: 1, // 🔹 Fade in effect
@@ -227,7 +245,7 @@ const Home = () => {
                     <a href="#">➤ Explore More</a>
                 </div>
             </section>
-            <ContactUs />
+            <ContactPopup isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
             <Footer />
         </div>
     );

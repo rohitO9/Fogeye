@@ -6,10 +6,14 @@ import india from "../assets/contents.png";
 import usa from "../assets/flag.png";
 import { Link } from "react-router-dom";
 import {  FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import ContactPopup from "./contactpop";  // Import Contact Popup
+
 
 
 
 const footer = ()=>{
+    const [popupOpen, setPopupOpen] = useState(false); // State for Popup
+
     return(
         <div className="footer">
             <div className="footercontainer">
@@ -48,6 +52,7 @@ const footer = ()=>{
                     </ul>
                 </div>
             </div>
+            <ContactPopup isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
         </div>
     )
 }

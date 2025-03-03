@@ -28,7 +28,6 @@
     /* background-color: yellow; */
     @media (max-width:720px) {
         margin: unset;
-        padding: 10px 2rem;
         border-radius: 34px;
          .companylogo{
             margin-top: 14px;
@@ -96,7 +95,7 @@
 
     .menu {
         position: absolute;
-        top: 36px;
+        top: 46px;
         right: 0px;
         background-color: #011846;
         width: 200px;
