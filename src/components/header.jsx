@@ -8,7 +8,7 @@ import ContactPopup from "./contactpop";  // Import Contact Popup
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [popupOpen, setPopupOpen] = useState(false); // State for Popup
-
+ 
     return (
         <div className="header">
             <nav className="navbar">

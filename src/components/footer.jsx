@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./footer.css";
-import 'font-awesome/css/font-awesome.min.css';
+// import 'font-awesome/css/font-awesome.min.css';
 import Logo from "../assets/logo.png";
 import india from "../assets/contents.png";
 import usa from "../assets/flag.png";
 import { Link } from "react-router-dom";
-
+import {  FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 
 
@@ -20,7 +20,7 @@ const footer = ()=>{
                     <li><img className="usa" src={usa}/></li>
                 </div>
                 </div>
-                <div className="menu">
+                <div className="menu"> 
                     <ul>
                     <li><Link to="/about">About Us</Link></li>
                         <li><Link to="/product">Products</Link></li>
@@ -42,9 +42,9 @@ const footer = ()=>{
                 </div>
                 <div className="item">
                     <ul>
-                        <li><i className="fa fa-linkedin-square" aria-hidden="true"></i></li>
-                        <li><i className="fa fa-instagram" aria-hidden="true"></i></li>
-                        <li><i className="fa fa-facebook-square" aria-hidden="true"></i></li>
+                        <li> <FaLinkedinIn  className="icon" /> </li>
+                        <li> <FaInstagram className="icon" /> </li>
+                        <li> <FaFacebookF  className="icon" /> </li>
                     </ul>
                 </div>
             </div>

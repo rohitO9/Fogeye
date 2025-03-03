@@ -13,7 +13,7 @@
     .popup-box {
         background: white;
         padding: 20px;
-        width: 70%;
+        width: 40%;
         border-radius: 8px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         position: relative;
@@ -26,17 +26,21 @@
 
         .close-btn {
             position: absolute;
-            top: -15px;
+            top: -20px;
             right: -12px;
             background: none;
             border: none;
-            font-size: 20px;
+            font-size: 25px;
             cursor: pointer;
             color: #333;
-
-            &:hover {
-                color: red;
-            }
+            background-color: white;         
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 0;
+            padding-top: 5px;
+            padding-left: 7px;
+            padding-right: 6px;
+            border-radius: 50%;
+           
         }
         .head{
             display: flex;
@@ -51,6 +55,7 @@
                 flex-direction: column;
                 margin-bottom: 15px;
                 text-align: left;
+                /* background-color: yellow; */
 
                 label {
                     font-size: 14px;
@@ -59,10 +64,11 @@
 
                 input, textarea {
                     padding: 8px;
-                    border: 1px solid #ccc;
+                    border: 1px solid #D9D9D9;
+                    background-color: #F8F8F8;
                     border-radius: 4px;
                     font-size: 14px;
-                    width: 100%;
+                    width: 95%;
                 }
 
                 textarea {
@@ -109,4 +115,17 @@
             }
         }
     }
+
+    @media (max-width:768px){
+        .popup-box{
+            width: 80%;
+        }
+    }
+
+    @media (max-width:375px){
+        .popup-box{
+            width: 70%;
+        }
+    }
+
 }
