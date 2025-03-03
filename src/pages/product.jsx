@@ -5,6 +5,7 @@ import "./product.css";
 import producthero from "../assets/Frame.png";
 import rafiki from "../assets/rafiki.png";
 import product22 from "../assets/product22.png"
+import ContactUs from "../components/ContactUs";
 
 
 
@@ -28,7 +29,7 @@ const products = [
 
     }
 ]
-const product = ()=>{
+const product = ()=>{ 
     return(
         <div className="product">
             <Header/>
@@ -41,9 +42,9 @@ const product = ()=>{
                     {
                         products.map((product ,index)=>(
                             <div key={index} className="allproduct">
-                                <div style={{width:"100%"}} className="productbutton">
-                               <button className="read-more">Read More →</button>
-                               </div>
+                                {/* <div style={{width:"100%"}} className="productbutton">
+                               <button href="#" className="read-more">Read More →</button>
+                               </div> */}
                                 <div className="content">
                                 <h1>{product.Heading}</h1>
                                 <h3>
@@ -52,6 +53,7 @@ const product = ()=>{
                                 <p>
                                     {product.Para}
                                 </p>
+                                <button href="#" className="read-more">Learn More</button>
                                 </div>
                                 <div className="productimg">
                                     <img src={product.img}/>
@@ -64,9 +66,8 @@ const product = ()=>{
                         ))
                     }
                 </div>
-                <section className="contact-section">
+                {/* <section className="contact-section">
                 <div className="container">
-                    {/* Left Side - Contact Form */}
                     <div className="contact-form">
                         <h2>Have Questions?<br /> Let's Talk!</h2>
                         <p className="email-info">
@@ -82,12 +83,12 @@ const product = ()=>{
                         </form>
                     </div>
 
-                    {/* Right Side - Illustration */}
                     <div className="contact-illustration">
                         <img src={rafiki} alt="Contact Illustration" />
                     </div>
                 </div>
-            </section>
+            </section> */}
+            <ContactUs />
             <Footer />
         </div>
     )

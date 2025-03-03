@@ -7,6 +7,8 @@ import dimond from "../assets/dimond.png";
 import eclips from "../assets/Ellipse.png";
 import rafiki from "../assets/rafiki.png";
 import New_eclips from "../assets/Ellipse31.png";
+import { IoMailOutline } from "react-icons/io5";
+import ContactUs from "../components/ContactUs";
 
 
 const cards = [
@@ -26,7 +28,7 @@ const cards = [
         Subheading: "We leverage AI to automate processes, improve decision-making, and deliver personalized experiences."
     }
 ]
-
+ 
 const about = () => {
     return (
         <div className="about">
@@ -47,6 +49,8 @@ const about = () => {
                 <img src={imgHero2} />
             </div>
             <div className="heroCards">
+                <p className="heroCards-heading" >What We Do?</p>
+                <p className="heroCards-subheading" >Harnessing the Power of AI, Analytics, and Automation</p>
                 <div className="aboutcards">
                     {
                         cards.map((card, index) => (
@@ -87,30 +91,7 @@ const about = () => {
                     </div>
                 </div>
             </section>
-            <section className="contact-section">
-                <div className="container">
-                    {/* Left Side - Contact Form */}
-                    <div className="contact-form">
-                        <h2>Have Questions?<br /> Let's Talk!</h2>
-                        <p className="email-info">
-                            <span>📧</span> info@foggy.ai
-                        </p>
-                        <form>
-                            <div className="input-row">
-                                <input type="text" placeholder="Name" required />
-                                <input type="email" placeholder="Email" required />
-                            </div>
-                            <textarea placeholder="Message" required></textarea>
-                            <button type="submit">Send</button>
-                        </form>
-                    </div>
-
-                    {/* Right Side - Illustration */}
-                    <div className="contact-illustration">
-                        <img src={rafiki} alt="Contact Illustration" />
-                    </div>
-                </div>
-            </section>
+            <ContactUs />
             <Footer />
 
         </div>
