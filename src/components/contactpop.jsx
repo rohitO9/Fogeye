@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa"; // Import Close Icon
 import "./contactpop.css"; // Using SCSS for Nested CSS
-
+ 
 const ContactPopup = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
@@ -20,7 +20,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                     <i className="fab fa-facebook"></i>
                     <i className="fa-brands fa-instagram"></i>
                 </div>
-                </div>
+                </div> 
                 
 
                 <form>

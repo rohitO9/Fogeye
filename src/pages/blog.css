@@ -4,7 +4,7 @@
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
-    background: linear-gradient(90deg, rgba(248, 248, 248, 1) 31%, rgba(215, 219, 232, 1) 69%);
+    background-color: #F6F7F7; 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -49,10 +49,14 @@
         gap: 20px;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 150px 20px 0px 20px;
+        padding: 100px 20px 0px 20px;
 
         @media (max-width:760px) {
             flex-direction: column-reverse;
+        }
+
+        @media (max-width: 425px) {
+            padding: 60px 20px 0px 20px;
         }
 
         .news-list {
@@ -60,18 +64,19 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            margin-bottom: 3rem;
 
             .news-item {
                 display: flex;
                 align-items: center;
                 padding: 15px;
-                border: 1px solid #ddd;
+                /* border: 1px solid #ddd; */
                 border-radius: 8px;
-                background-color: #F0F0F05C;
+                background-color: #F5F5F5;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+                /* transition: max-height 1s ease-in-out, opacity 1s ease-in-out; */
                 /* Slowmo effect */
-                opacity: 0.5;
+                /* opacity: 0.5; */
                 /* Initially faded */
                 height: 150px;
 
@@ -99,7 +104,7 @@
                     .image-placeholder {
                         width: 100%;
                         height: 100%;
-                        background-color: #eee;
+                        background-color: #979797;
                         border-radius: 8px;
                     }
                 }
@@ -109,7 +114,7 @@
                         margin: 0;
                         font-size: 18px;
                         font-weight: bold;
-                        color: #333;
+                        color: black;
                     }
 
                     p {
@@ -120,7 +125,7 @@
 
                     .read-more {
                         font-size: 14px;
-                        color: #0073e6;
+                        color: #2E007A;
                         text-decoration: none;
                         font-weight: bold;
 
@@ -129,14 +134,21 @@
                         }
                     }
 
+                    .news-content-date{
+                        /* background-color: yellow; */
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
                     .news-date {
                         display: block;
                         font-size: 12px;
                         color: #999;
-                        margin-top: 5px;
                     }
                 }
             }
+
         }
 
         .news-sidebar {
@@ -151,7 +163,9 @@
             }
 
             .sideboxes {
-                border: 0.5px solid rgb(92, 91, 91);
+                border: 0.5px solid #DDDDDD;
+                /* background-color: yellow; */
+
 
                 @media (max-width:760px) {
                     border: none;
@@ -159,49 +173,90 @@
             }
 
             .sidebar-box {
-                padding: 25px;
+                padding: 10px 25px;
                 display: flex;
+
                 .new_logo{
                     margin-top: 10px;
                     margin-right: 20px;
                 }
 
-                h4 {
-                    font-size: 16px;
+                .sidebar_text-heading{
+                    font-size: 24px;
                     margin: 0;
                     font-weight: bold;
                     color: #222;
+                    .icon{
+                        display: none;
+                    }
                 }
 
-                p {
-                    font-size: 14px;
-                    color: #666;
+                .sidebar_text-heading-2{
+                    color: #717171;
+                    font-size: 24px;
+                    margin: 0;
+                    font-weight: bold;
+                }
+
+                @media (max-width:375px){
+                  .sidebar_text-heading{
+                    font-size: 18px;
+                    position: relative;
+                    .icon{
+                        display: inline;
+                        position: absolute;
+                        right: 0;
+                        top: 4px;
+                        cursor: pointer;
+                    }
+                  }
+                  .sidebar_text-heading-2{
+                    font-size: 18px;
+                  }
+                }
+
+                .sidebar_text-subheading{
+                    font-size: 12px;
+                    margin: 0;
+                    padding: 0;
                     margin-top: 5px;
+                    color: #222222;
+                }
+                .sidebar_text-subheading-2{
+                    font-size: 12px;
+                    margin: 0;
+                    padding: 0;
+                    margin-top: 5px; 
+                    color: #CECECE;
                 }
             }
 
             .newsletter-box {
                 padding: 20px;
-                border-radius: 8px;
                 background-color: #f8f8f8;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                 border: 0.5px solid #DDDDDD;
                 .mail{
                     display: flex;
                     justify-content: center;
                 }
                 
 
-                h4 {
-                    font-size: 16px;
+                .newsletter-box-heading{
+                    font-size: 20px;
                     margin: 0;
-                    font-weight: bold;
+                    font-weight: 600;
                     color: #222;
+                    margin-top: 10px;
+                    text-align: center;
+                    
                 }
 
-                p {
-                    font-size: 14px;
-                    color: #666;
+                .newsletter-box-description{
+                    font-size: 12px;
+                    color: #A4A4A4;
                     margin-top: 5px;
+                    font-weight: 400;
+                    text-align: center;
                 }
             }
 
@@ -214,14 +269,16 @@
                     input {
                         flex: 1;
                         padding: 8px;
+                        margin-top: 9px;
                         border: 1px solid #ddd;
                         border-radius: 4px;
+                        background-color: #DBDBDB54;
                         font-size: 14px;
                     }
 
                     button {
                         padding: 8px 12px;
-                        background-color: #0073e6;
+                        background:#011846;
                         color: #fff;
                         border: none;
                         border-radius: 4px;
@@ -230,7 +287,7 @@
                         font-weight: bold;
 
                         &:hover {
-                            background-color: #005bb5;
+                            background-color: #000d25;
                         }
                     }
                 }
@@ -246,116 +303,6 @@
         }
     }
 
-    .contact-section {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10% 0px;
-        background: #f7f7f78c;
-
-        @media (max-width:860PX) {
-            background: #c1cee500;
-
-            .input-row {
-                input {
-                    width: 90%;
-                }
-            }
-        }
-
-        .container {
-            display: flex;
-            align-items: center;
-
-            @media (max-width: 992px) {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-form {
-                flex: 1;
-                max-width: 450px;
-
-                @media (max-width:860px) {
-                    padding: 0px 20px;
-                }
-
-                h2 {
-                    font-size: 28px;
-                    font-weight: 700;
-                    margin-bottom: 10px;
-                    color: #1a1a1a;
-                }
-
-                .email-info {
-                    font-size: 16px;
-                    color: #5f5f5f;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    margin-bottom: 20px;
-
-                    span {
-                        font-size: 18px;
-                    }
-                }
-
-                form {
-                    display: flex;
-                    flex-direction: column;
-                    flex-wrap: wrap;
-                    gap: 15px;
-
-                    .input-row {
-                        display: flex;
-                        gap: 10px;
-
-                        input {
-                            flex: 1;
-                            padding: 12px;
-                            border: 1px solid #ddd;
-                            border-radius: 5px;
-                            font-size: 16px;
-                        }
-                    }
-
-                    textarea {
-                        padding: 12px;
-                        border: 1px solid #ddd;
-                        border-radius: 5px;
-                        font-size: 16px;
-                        resize: none;
-                        height: 100px;
-                    }
-
-                    button {
-                        width: 100%;
-                        padding: 12px;
-                        background: #2E007A;
-                        color: white;
-                        border: none;
-                        font-size: 16px;
-                        font-weight: 600;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        transition: background 0.3s ease;
-
-                        &:hover {
-                            background: #2E007A;
-                        }
-                    }
-                }
-            }
-
-            .contact-illustration {
-                display: flex;
-
-                @media (max-width:860px) {
-                    display: none;
-                }
-            }
-        }
-    }
+   
 
 }

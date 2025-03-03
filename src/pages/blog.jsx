@@ -1,14 +1,14 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./blog.css";
-import bloghero from "../assets/Frame.png";
-import rafiki from "../assets/rafiki.png";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import mail from "../assets/mail.png";
 import news from "../assets/news.png";
 import vector from "../assets/Vector.png";
 import bar from "../assets/bar-chart.png";
+import ContactUs from "../components/ContactUs";
+import {IoIosArrowDown, IoIosArrowDropdownCircle} from 'react-icons/io'
+
 
 const newsItems = [
     {
@@ -45,10 +45,10 @@ const Blog = () => {
             <Header />
             <div className="blogcontainer">
                 <div className="bloghero">
-                    <img src={bloghero} alt="Blog Hero" />
+                    {/* <img src={bloghero} alt="Blog Hero" /> */}
                 </div>
             </div>
-
+ 
             <div className="news-section">
                 <div className="news-list">
                     {newsItems.map((item, index) => (
@@ -57,10 +57,12 @@ const Blog = () => {
                                 <div className="image-placeholder"></div>
                             </div>
                             <div className="news-content">
-                                <h3>{item.title}</h3>
+                                <h3>{item.title} </h3>
                                 <p>{item.description}</p>
+                                <div className="news-content-date" >
                                 <a href="#" className="read-more">Read More →</a>
                                 <span className="news-date">Published on {item.date}</span>
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -74,8 +76,8 @@ const Blog = () => {
                             <img src={news}/>
                         </div>
                             <div className="sidebar_text">
-                            <h4>News and Updates</h4>
-                            <p>Stay updated with Fogeye’s milestones, new product launches, and events.</p>
+                            <div className="sidebar_text-heading" >News and Updates <IoIosArrowDropdownCircle className="icon" />  </div>
+                            <p className="sidebar_text-subheading" >Stay updated with Fogeye’s milestones, new product launches, and events.</p>
                             </div>
                         </div>
                         <div className="sidebar-box">
@@ -83,8 +85,8 @@ const Blog = () => {
                         <img src={bar}/>
                         </div>
                         <div className="sidebar_text">
-                            <h4>News and Updates</h4>
-                            <p>Stay updated with Fogeye’s milestones, new product launches, and events.</p>
+                        <p className="sidebar_text-heading-2" >News and Updates</p>
+                        <p className="sidebar_text-subheading-2" >Stay updated with Fogeye’s milestones, new product launches, and events.</p>
                             </div>
                         </div>
                         <div className="sidebar-box">
@@ -92,8 +94,8 @@ const Blog = () => {
                         <img src={vector}/>
                         </div>
                         <div className="sidebar_text">
-                            <h4>News and Updates</h4>
-                            <p>Stay updated with Fogeye’s milestones, new product launches, and events.</p>
+                            <p className="sidebar_text-heading-2" >News and Updates</p>
+                            <p className="sidebar_text-subheading-2" >Stay updated with Fogeye’s milestones, new product launches, and events.</p>
                             </div>
                         </div>
                     </div>
@@ -101,8 +103,8 @@ const Blog = () => {
                         <div className="mail">
                         <img src={mail}/>
                         </div>
-                        <h4>Get fresh content delivered</h4>
-                        <p>Get strategic insights that matter to your business. Stay updated on the areas that interest you.</p>
+                        <p className="newsletter-box-heading" >Get fresh content delivered</p>
+                        <p className="newsletter-box-description" >Get strategic insights that matter to your business. Stay updated on the areas that interest you.</p>
                         <div className="newsletter-form">
                             <input type="email" name="email" placeholder="Enter your email" />
                             <button>Subscribe</button>
@@ -111,27 +113,7 @@ const Blog = () => {
                 </div>
             </div>
 
-            <section className="contact-section">
-                <div className="container">
-                    <div className="contact-form">
-                        <h2>Have Questions?<br /> Let's Talk!</h2>
-                        <p className="email-info">
-                            <span>📧</span> info@foggy.ai
-                        </p>
-                        <form>
-                            <div className="input-row">
-                                <input type="text" name="name" placeholder="Name" required />
-                                <input type="email" name="email" placeholder="Email" required />
-                            </div>
-                            <textarea name="message" placeholder="Message" required></textarea>
-                            <button type="submit">Send</button>
-                        </form>
-                    </div>
-                    <div className="contact-illustration">
-                        <img src={rafiki} alt="Contact Illustration" />
-                    </div>
-                </div>
-            </section>
+           <ContactUs />
             <Footer />
         </div>
     );

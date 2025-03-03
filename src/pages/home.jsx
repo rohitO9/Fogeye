@@ -7,10 +7,12 @@ import poster from "../assets/Poster.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
-import rafiki from "../assets/rafiki.png";
+
 import rg from "../assets/rb.png";
 import image250 from "../assets/Group250.png";
 import card from "../assets/Rectangle5836.png";
+import {IoMailOutline, IoMailUnreadOutline} from 'react-icons/io5'
+import ContactUs from "../components/ContactUs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,8 +88,8 @@ const Home = () => {
                 <Header />
             <div className="herosection">
                 <div className="text">
-                    <h1>Empowering Industries with Cutting-Edge AI Solutions</h1>
-                    <p>
+                    <p className="text-heading" >Empowering Industries with Cutting-Edge AI Solutions</p>
+                    <p className="description" >
                         Explore our suite of intelligent AI products that streamline
                         processes, drive efficiency, and deliver smarter insights across
                         various sectors.
@@ -96,7 +98,7 @@ const Home = () => {
                     <div className="herobutton">
                         <button className="explore">Explore Products</button>
                         <button className="get">
-                            <i className="fa fa-envelope" aria-hidden="true"></i> Get in Touch
+                         <IoMailUnreadOutline className='icon'  />    Get in Touch
                         </button>
                     </div>
                 
@@ -137,9 +139,9 @@ const Home = () => {
                                     <img src={card.img2} alt="Frame" />
                                 </div> */}
                                 <div className="content">
-                                    <h2>{card.title}</h2>
-                                    <h3>{card.subtitle}</h3>
-                                    <p>{card.description}</p>
+                                    <p className="content-title" >{card.title}</p>
+                                    <p className="content-subtitle" >{card.subtitle}</p>
+                                    <p className="content-description" >{card.description}</p>
                                     <button>Learn More</button>
                                 </div>
                             </motion.div>
@@ -161,17 +163,19 @@ const Home = () => {
 
                     {/* Right Side - Text Content */}
                     <div className="about-content">
-                        <h4>Who we are</h4>
-                        <h2>
-                            <span>Passionate Technologists</span> and Industry Experts
-                        </h2>
-                        <p>
+                        <p className="about-content-title" >Who we are</p>
+                        <p className="about-content-heading" >
+                            Passionate Technologists and Industry Experts
+                        </p>
+                        <p className="about-content-description" >
                             We are a dedicated team of technologists and industry veterans with a deep
                             understanding of the challenges faced by modern enterprises. Our solutions are
                             tailored to address these challenges, helping businesses stay competitive in an
                             ever-evolving market.
                         </p>
-                        <p>
+                        <p 
+                        className="about-content-description"
+                        >
                             At FogFly AI Technologies, we are committed to empowering businesses with the
                             transformative power of AI, advanced analytics, and next-generation tools.
                             Our solutions are designed to simplify processes, enhance decision-making,
@@ -185,15 +189,15 @@ const Home = () => {
                 </div>
             </section>
             <section className="blog-section">
+                       <p className="blog-section-heading" >
+                            A lot is happening, <br />
+                            <span>We are Blogging about it!</span>
+                        </p>
                 <div className="container">
                     {/* Left Featured Blog */}
                     <div className="featured-blog">
-                        <h2>
-                            A lot is happening, <br />
-                            <span>We are Blogging about it!</span>
-                        </h2>
                         <div className="featured-content">
-                            <h4>🔹 Introducing Our New Product: FraseIT</h4>
+                            <p className="featured-content-heading" >🚀 Introducing Our New Product: FraseIT</p>
                             <p>Knowledge by Practice with AI.</p>
                             <p>
                                 We've unveiled an innovative speech-to-text AI-powered transcription tool
@@ -209,8 +213,8 @@ const Home = () => {
                             <div key={blog.id} className="blog-card">
                                 <img src={blog.img} alt="Blog" />
                                 <div className="blog-info">
-                                    <h4>{blog.title}</h4>
                                     <p>{blog.date}</p>
+                                    <p className="blog-info-heading" >{blog.title}</p>
                                     <a href={blog.link}>Read Article ➤</a>
                                 </div>
                             </div>
@@ -223,30 +227,7 @@ const Home = () => {
                     <a href="#">➤ Explore More</a>
                 </div>
             </section>
-            <section className="contact-section">
-                <div className="container">
-                    {/* Left Side - Contact Form */}
-                    <div className="contact-form">
-                        <h2>Have Questions?<br /> Let's Talk!</h2>
-                        <p className="email-info">
-                            <span>📧</span> info@foggy.ai
-                        </p>
-                        <form>
-                            <div className="input-row">
-                                <input type="text" placeholder="Name" required />
-                                <input type="email" placeholder="Email" required />
-                            </div>
-                            <textarea placeholder="Message" required></textarea>
-                            <button type="submit">Send</button>
-                        </form>
-                    </div>
-
-                    {/* Right Side - Illustration */}
-                    <div className="contact-illustration">
-                        <img src={rafiki} alt="Contact Illustration" />
-                    </div>
-                </div>
-            </section>
+            <ContactUs />
             <Footer />
         </div>
     );
