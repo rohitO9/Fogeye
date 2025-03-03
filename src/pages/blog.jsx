@@ -1,13 +1,13 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./blog.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import mail from "../assets/mail.png";
 import news from "../assets/news.png";
 import vector from "../assets/Vector.png";
 import bar from "../assets/bar-chart.png";
 import ContactUs from "../components/ContactUs";
-import {IoIosArrowDown, IoIosArrowDropdownCircle} from 'react-icons/io'
+import { IoIosArrowDown, IoIosArrowDropdownCircle } from 'react-icons/io'
 
 
 const newsItems = [
@@ -39,6 +39,14 @@ const newsItems = [
 
 const Blog = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [dropdown, setDropdown] = useState(window.innerWidth < 750 ? true : false);
+    useEffect(() => {
+        const handleResize = () => {
+            setDropdown(window.innerWidth < 750 ? true : false);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [])
 
     return (
         <div className="blog">
@@ -48,7 +56,7 @@ const Blog = () => {
                     {/* <img src={bloghero} alt="Blog Hero" /> */}
                 </div>
             </div>
- 
+
             <div className="news-section">
                 <div className="news-list">
                     {newsItems.map((item, index) => (
@@ -60,8 +68,8 @@ const Blog = () => {
                                 <h3>{item.title} </h3>
                                 <p>{item.description}</p>
                                 <div className="news-content-date" >
-                                <a href="#" className="read-more">Read More →</a>
-                                <span className="news-date">Published on {item.date}</span>
+                                    <a href="#" className="read-more">Read More →</a>
+                                    <span className="news-date">Published on {item.date}</span>
                                 </div>
                             </div>
                         </div>
@@ -69,39 +77,43 @@ const Blog = () => {
                 </div>
 
                 <div onClick={() => setIsOpen(!isOpen)} className={`news-sidebar ${isOpen ? 'active' : ''}`}>
+
                     <div className="sideboxes">
-                       
+
                         <div className="sidebar-box">
-                        <div className="new_logo">
-                            <img src={news}/>
-                        </div>
+                            <div className="new_logo">
+                                <img src={news} />
+                            </div>
                             <div className="sidebar_text">
-                            <div className="sidebar_text-heading" >News and Updates <IoIosArrowDropdownCircle className="icon" />  </div>
-                            <p className="sidebar_text-subheading" >Stay updated with Fogeye’s milestones, new product launches, and events.</p>
+                                <div className="sidebar_text-heading" >News and Updates <IoIosArrowDropdownCircle className="icon" />  </div>
+                                <p className="sidebar_text-subheading" >Stay updated with Fogeye’s milestones, new product launches, and events.</p>
+                            </div>
+                            <div className="dropdown" style={{display:dropdown ? "block" : "none"}}>
+                                <img width="35" height="35" src="https://img.icons8.com/fluency-systems-filled/50/circled-chevron-down.png" alt="circled-chevron-down" />
                             </div>
                         </div>
                         <div className="sidebar-box">
-                        <div className="new_logo">
-                        <img src={bar}/>
-                        </div>
-                        <div className="sidebar_text">
-                        <p className="sidebar_text-heading-2" >News and Updates</p>
-                        <p className="sidebar_text-subheading-2" >Stay updated with Fogeye’s milestones, new product launches, and events.</p>
+                            <div className="new_logo">
+                                <img src={bar} />
+                            </div>
+                            <div className="sidebar_text">
+                                <p className="sidebar_text-heading-2" >News and Updates</p>
+                                <p className="sidebar_text-subheading-2" >Stay updated with Fogeye’s milestones, new product launches, and events.</p>
                             </div>
                         </div>
                         <div className="sidebar-box">
-                        <div className="new_logo">
-                        <img src={vector}/>
-                        </div>
-                        <div className="sidebar_text">
-                            <p className="sidebar_text-heading-2" >News and Updates</p>
-                            <p className="sidebar_text-subheading-2" >Stay updated with Fogeye’s milestones, new product launches, and events.</p>
+                            <div className="new_logo">
+                                <img src={vector} />
+                            </div>
+                            <div className="sidebar_text">
+                                <p className="sidebar_text-heading-2" >News and Updates</p>
+                                <p className="sidebar_text-subheading-2" >Stay updated with Fogeye’s milestones, new product launches, and events.</p>
                             </div>
                         </div>
                     </div>
                     <div className="newsletter-box">
                         <div className="mail">
-                        <img src={mail}/>
+                            <img src={mail} />
                         </div>
                         <p className="newsletter-box-heading" >Get fresh content delivered</p>
                         <p className="newsletter-box-description" >Get strategic insights that matter to your business. Stay updated on the areas that interest you.</p>
@@ -113,7 +125,7 @@ const Blog = () => {
                 </div>
             </div>
 
-           <ContactUs />
+            <ContactUs />
             <Footer />
         </div>
     );

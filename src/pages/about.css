@@ -83,7 +83,7 @@
         position: relative;
         display: flex;
         justify-content: center;
-        margin-top: -17rem;
+        margin-top: -14rem;
         z-index: 5;
         img{
             background-color: #E0DBF361;
@@ -93,7 +93,7 @@
     }
 
     .heroCards {
-        top: -300px;
+        top: -345px;
         position: relative;
         z-index: 50;
         padding: 0px 20px;

@@ -86,9 +86,9 @@ const about = () => {
                         <p><strong>Collaboration:</strong> We foster strong partnerships with our clients, employees, and stakeholders to drive sustainable and supportive environments.</p>
                         <p><strong>Excellence:</strong> We strive for excellence in everything we do, from our products and services to our customer service and team culture.</p>
                     </div>
-                    <div className="image-container">
+                    {/* <div className="image-container">
                         <img src={eclips} alt="Robot and human collaboration" />
-                    </div>
+                    </div> */}
                 </div>
             </section>
             <ContactUs />

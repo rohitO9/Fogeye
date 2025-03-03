@@ -106,7 +106,10 @@
                     }
                 }
                 h3{
+                    
                     color: #717171;
+                    margin-block-end: 0.5em;
+                    margin-block-start: 1em;
                     @media (max-width:860px) {
                         font-size: 20px;
                     }
@@ -117,6 +120,7 @@
                 p{
                     color: #8D85B6;
                     margin: 0;
+                    margin-block-end: 1em;
                     @media (max-width:760px) {
                         font-size: 12px;
                         font-weight: 400;

@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
 
 import rg from "../assets/rb.png";
-import image250 from "../assets/Group250.png";
+import image250 from "../assets/Group668.png";
 import card from "../assets/Rectangle5836.png";
 import {IoMailOutline, IoMailUnreadOutline} from 'react-icons/io5'
 import ContactUs from "../components/ContactUs";
@@ -31,19 +31,17 @@ const initialCards = [
     },
     {
         id: 2,
-        title: "AI Insight",
-        subtitle: "Transform Data into Actionable Intelligence",
-        description:
-            "Harness the power of AI to analyze and interpret vast datasets, providing meaningful insights that drive decision-making and enhance business strategies.",
+        title: "FraseIT",
+        subtitle: "Revolutionize Healthcare with AI-Powered Clinical Automation",
+        description:"Empowering healthcare providers with AI-driven tools to automate transcription, simplify data sharing, and deliver real-time clinical insights enhancing patient outcomes and operational efficiency.",
         img1: poster,
         img2: TM_2_image,
     },
     {
         id: 3,
-        title: "AutomateIT",
-        subtitle: "Streamline Workflow with Intelligent Automation",
-        description:
-            "Leverage AI-driven automation tools to eliminate manual tasks, reduce errors, and boost operational efficiency across industries.",
+        title: "FraseIT",
+        subtitle: "Revolutionize Healthcare with AI-Powered Clinical Automation",
+        description:"Empowering healthcare providers with AI-driven tools to automate transcription, simplify data sharing, and deliver real-time clinical insights enhancing patient outcomes and operational efficiency.",
         img1: poster,
         img2: TM_2_image,
     },
@@ -82,12 +80,12 @@ const blogs = [
 const Home = () => {
     const [cards, setCards] = useState(initialCards);
     const [popupOpen, setPopupOpen] = useState(false); // State for Popup
-    const [xOffset, setXOffset] = useState(window.innerWidth < 500 ? -250 : 350);
+    const [xOffset, setXOffset] = useState(window.innerWidth < 500 ? -286 : 480);
 
     // Handle screen resizing
     useEffect(() => {
         const handleResize = () => {
-            setXOffset(window.innerWidth < 500 ? -250 : -350);
+            setXOffset(window.innerWidth < 500 ? -286 : -480);
         };
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
@@ -116,7 +114,7 @@ const Home = () => {
                         
                         
                         <button className="get" onClick={() => setPopupOpen(true)}>
-                         <IoMailUnreadOutline className='icon'  />    Get in Touch
+                             <p> <IoMailUnreadOutline className='icon'  />Get in Touch</p>
                         </button>
                     </div>
                 
@@ -242,10 +240,11 @@ const Home = () => {
 
                 {/* Explore More Button */}
                 <div className="explore-more">
-                    <a href="#">➤ Explore More</a>
+                    <Link to="/blog">➤ Explore More</Link>
                 </div>
             </section>
             <ContactPopup isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
+                <ContactUs/>
             <Footer />
         </div>
     );

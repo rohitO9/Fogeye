@@ -1,7 +1,9 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa"; // Import Close Icon
 import "./contactpop.css"; // Using SCSS for Nested CSS
- 
+import {  FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
+
 const ContactPopup = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
@@ -9,19 +11,19 @@ const ContactPopup = ({ isOpen, onClose }) => {
         <div className="popup-overlay">
             <div className="popup-box">
                 {/* Close Button */}
-                
+
                 <button className="close-btn" onClick={onClose}>
                     <FaTimes />
                 </button>
                 <div className="head">
-                <h2>Get In Touch</h2>
-                <div className="social-icons">
-                    <i className="fab fa-linkedin"></i>
-                    <i className="fab fa-facebook"></i>
-                    <i className="fa-brands fa-instagram"></i>
+                    <h2>Get In Touch</h2>
+                    <div className="social-icons">
+                         <FaLinkedinIn className="icon" /> 
+                         <FaInstagram className="icon" /> 
+                         <FaFacebookF className="icon" /> 
+                    </div>
                 </div>
-                </div> 
-                
+
 
                 <form>
                     <div className="input-group">
@@ -43,7 +45,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                 </form>
 
                 {/* Social Icons */}
-                
+
             </div>
         </div>
     );
